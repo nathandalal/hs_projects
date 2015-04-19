@@ -1,0 +1,4 @@
+display 3 >= 6 read x
+display x
+assign y = 5
+display 3 + x = 6 - y read z

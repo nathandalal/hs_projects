@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ basicTest()
+comment0.text=\n\ Tests\ the\ basic\ binary\ tree\ methods\ of\ TreeUtil.\n
+comment1.params=
+comment1.target=void\ morseTest()
+comment1.text=\n\ Tests\ the\ morse\ code\ methods\ of\ the\ TreeUtil\ class.\n
+comment2.params=util\ decodingTree\ display
+comment2.target=void\ userMorse(TreeUtil,\ TreeNode,\ TreeDisplay)
+comment2.text=\n\ Allows\ the\ user\ to\ test\ their\ own\ code\ with\ user-inputted\ morse\ code.\n\ \n\ @param\ util\ the\ TreeUtil\ that\ needs\ to\ be\ passed\n\ @param\ decodingTree\ the\ decoding\ tree\ in\ the\ display\ window\n\ @param\ display\ the\ TreeDisplay\ object\ that\ needs\ to\ be\ passed\n
+comment3.params=
+comment3.target=void\ test()
+comment3.text=\n\ Compiles\ all\ aspects\ of\ the\ tester\ in\ a\ menu-based\ system.\n
+comment4.params=value
+comment4.target=void\ sendValue(java.lang.Object)
+comment4.text=\n\ called\ by\ the\ display\ object\ to\ send\ back\ the\ node\ value\n\ when\ a\ node\ is\ visited\n\ \n\ @param\ value\ the\ value\ passed\ that\ is\ printed\ out\n
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+numComments=6

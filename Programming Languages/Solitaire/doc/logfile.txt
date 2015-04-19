@@ -1,0 +1,50 @@
+Class documentation
+<---- javadoc command: ---->
+/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/javadoc
+-author
+-version
+-nodeprecated
+-package
+-source
+1.6
+-noindex
+-notree
+-nohelp
+-nonavbar
+-d
+/Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/doc
+-classpath
+/Applications/BlueJ.app/Contents/Resources/Java/bluejcore.jar:/Applications/BlueJ.app/Contents/Resources/Java/junit.jar:/Users/nathandalal 1/Documents/Jar Files/GridWorldCaseStudy/gridworld.jar:/Users/nathandalal 1/Documents/Jar Files/MyJavaLibrary/MyLib.jar:/Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire
+/Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/SolitaireDisplay.java
+<---- end of javadoc command ---->
+Loading source file /Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/SolitaireDisplay.java...
+Constructing Javadoc information...
+/Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/SolitaireDisplay.java:18: cannot find symbol
+symbol  : class Solitaire
+location: class SolitaireDisplay
+	private Solitaire game;
+	        ^
+/Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/SolitaireDisplay.java:20: cannot find symbol
+symbol  : class Solitaire
+location: class SolitaireDisplay
+	public SolitaireDisplay(Solitaire game)
+	                        ^
+/Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/SolitaireDisplay.java:72: cannot find symbol
+symbol  : class Card
+location: class SolitaireDisplay
+	private void drawCard(Graphics g, Card card, int x, int y)
+	                                  ^
+Standard Doclet version 1.6.0_65
+Building tree for all the packages and classes...
+Generating /Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/doc/SolitaireDisplay.html...
+Generating /Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/doc/package-frame.html...
+Generating /Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/doc/package-summary.html...
+Generating /Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/doc/constant-values.html...
+Generating /Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/doc/serialized-form.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating /Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/doc/allclasses-frame.html...
+Generating /Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/doc/allclasses-noframe.html...
+Generating /Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/doc/index.html...
+Generating /Users/nathandalal 1/Desktop/Nathan/2013 - 2014 School/Data Structures : ATCS/Java Projects BlueJ/Solitaire/doc/stylesheet.css...
+3 warnings

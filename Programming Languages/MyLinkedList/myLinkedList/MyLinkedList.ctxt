@@ -1,0 +1,44 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.lang.String\ toString()
+comment0.text=\n\ Prints\ out\ information\ on\ this\ instance\ of\ the\ class\ MyArrayList.\n\ \n\ @return\ String\ of\ the\ information\n
+comment1.params=
+comment1.target=MyLinkedList()
+comment1.text=\n\ Default\ constructor\ for\ objects\ of\ class\ MyLinkedList.\n\ Instantiates\ the\ instance\ variables.\n
+comment10.params=index\ obj
+comment10.target=java.lang.Object\ set(int,\ java.lang.Object)
+comment10.text=\n\ Sets\ the\ DoubleNode\ at\ index\ specified.\n\ \n\ @param\ index\ the\ index\ to\ set\ the\ new\ DoubleNode\n\ \n\ @return\ the\ old\ DoubleNode\ at\ given\ index\n\ \n\ @throws\ IndexOutOfBoundsException\ when\ index\ does\ not\ match\ with\ elements\ in\ the\ list\n
+comment11.params=obj
+comment11.target=boolean\ add(java.lang.Object)
+comment11.text=\n\ Adds\ the\ object\ to\ the\ end\ of\ this\ instance\ fo\ MyLinkedList.\n\ \n\ @param\ obj\ the\ object\ to\ be\ added\ to\ this\ instance\ of\ MyLinkedList.\n\ \n\ @return\ true\n\ \n\ Postcondition\:\ last.getValue()\ \=\=\ obj\n
+comment12.params=index\ obj
+comment12.target=void\ add(int,\ java.lang.Object)
+comment12.text=\n\ Adds\ the\ object\ passed\ to\ the\ index\ given\ in\ this\ instance\ of\ MyLinkedList.\n\ \n\ @param\ index\ the\ index\ to\ add\ obj\ to\n\ \n\ @param\ obj\ the\ object\ to\ go\ into\ the\ new\ DoubleNode\n\ \n\ Postcondition\:\ getNode(index).getValue()\ \=\=\ obj\n\ \n\ @throws\ IndexOutOfBoundsException\ when\ index\ does\ not\ match\ with\ elements\ in\ the\ list\n
+comment13.params=index
+comment13.target=java.lang.Object\ remove(int)
+comment13.text=\n\ Removes\ an\ element\ from\ the\ array\ given\ an\ index\n\ \n\ @param\ index\ the\ index\ to\ remove\ the\ element\ from\n\ \n\ @return\ the\ element\ removed\n\ \n\ @throws\ IndexOutOfBoundsException\ when\ index\ does\ not\ match\ with\ elements\ in\ the\ list\n
+comment2.params=
+comment2.target=int\ size()
+comment2.text=\n\ Returns\ the\ number\ of\ nodes\ in\ this\ instance\ of\ MyLinkedList.\n\ \n\ @return\ the\ instance\ variable\ size\n
+comment3.params=index
+comment3.target=boolean\ indexIsValidFirst(int)
+comment3.text=\n\ Checks\ if\ the\ index\ is\ within\ the\ first\ half\ of\ the\ instance\ of\ MyLinkedList\n\ \n\ @param\ index\ the\ index\ to\ check\n\ \n\ @return\ true\ if\ index\ is\ valid\ in\ the\ first\ half,\ false\ otherwise\n
+comment4.params=index
+comment4.target=boolean\ indexIsValidLast(int)
+comment4.text=\n\ Checks\ if\ the\ index\ is\ within\ the\ second\ half\ of\ the\ instance\ of\ MyLinkedList\n\ \n\ @param\ index\ the\ index\ to\ check\n\ \n\ @return\ true\ if\ index\ is\ valid\ in\ the\ second\ half,\ false\ otherwise\n
+comment5.params=index
+comment5.target=boolean\ indexIsValid(int)
+comment5.text=\n\ Checks\ if\ the\ index\ is\ within\ the\ instance\ of\ MyLinkedList\n\ \n\ @param\ index\ the\ index\ to\ check\n\ \n\ @return\ true\ if\ index\ is\ valid,\ false\ otherwise\n
+comment6.params=index
+comment6.target=DoubleNode\ getNodeFromFirst(int)
+comment6.text=\n\ Gets\ the\ DoubleNode\ specified\ in\ index\ from\ the\ first\ container.\n\ \n\ @param\ index\ the\ index\ to\ get\ the\ DoubleNode\ from\n\ \n\ @return\ the\ DoubleNode\ at\ given\ index\n\ \n\ Precondition\:\ 0\ <\=\ index\ <\=\ size/2\n\ \n\ Postcondition\:\ Goes\ from\ first,\ gets\ node\ at\ index\n
+comment7.params=index
+comment7.target=DoubleNode\ getNodeFromLast(int)
+comment7.text=\n\ Gets\ the\ DoubleNode\ specified\ in\ index\ from\ the\ last\ container.\n\ \n\ @param\ index\ the\ index\ to\ get\ the\ DoubleNode\ from\n\ \n\ @return\ the\ DoubleNode\ at\ given\ index\n\ \n\ Precondition\:\ \n\ \n\ Postcondition\:\ Goes\ from\ last,\ gets\ node\ at\ index\n
+comment8.params=index
+comment8.target=DoubleNode\ getNode(int)
+comment8.text=\n\ Gets\ the\ DoubleNode\ from\ the\ method\ most\ efficient\ (from\ first\ or\ last)\ at\ the\ index\ specified.\n\ \n\ @param\ index\ the\ index\ to\ get\ the\ DoubleNode\ from\n\ \n\ @return\ the\ DoubleNode\ at\ given\ index.\n
+comment9.params=index
+comment9.target=java.lang.Object\ get(int)
+comment9.text=\n\ Gets\ the\ DoubleNode\ at\ index\ specified.\n\ \n\ @param\ index\ the\ index\ to\ get\ the\ DoubleNode\ from\n\ \n\ @return\ the\ DoubleNode\ at\ given\ index\n\ \n\ @throws\ IndexOutOfBoundsException\ when\ index\ does\ not\ match\ with\ elements\ in\ the\ list\n
+numComments=14

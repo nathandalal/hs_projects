@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=TreeDisplay()
+comment1.params=
+comment1.target=void\ run()
+comment2.params=
+comment2.target=java.awt.Dimension\ getPreferredSize()
+comment3.params=g
+comment3.target=void\ paint(java.awt.Graphics)
+comment4.params=g2\ t\ minX\ maxX\ y\ yIncr
+comment4.target=void\ drawTree(java.awt.Graphics2D,\ TreeNode,\ int,\ int,\ int,\ int)
+comment5.params=root
+comment5.target=void\ displayTree(TreeNode)
+comment5.text=\n\ displayTree\ tells\ the\ component\ to\ switch\ to\ displaying\ the\ given\ tree\n\ @param\ root\ is\ the\ root\ of\ the\ tree\ to\ display\n\ postcondition\:\ the\ component\ displays\ the\ tree\ defined\ by\ root\n
+comment6.params=t
+comment6.target=void\ visit(TreeNode)
+comment6.text=\n\ visit\ changes\ the\ background\ color\ of\ the\ node\ given\ in\ the\ parameter\ to\ yellow,\n\ lighting\ up\ the\ node\ to\ indicate\ we\ are\ visiting\ it.\n\ @param\ t\ the\ node\ to\ light\ up\n\ postcondition\:\ the\ background\ color\ on\ the\ display\ for\ the\ selected\ node\ is\ changed\ to\ \n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yellow\n
+comment7.params=delay
+comment7.target=void\ setDelay(int)
+comment8.params=tester
+comment8.target=void\ setTester(BinaryTreeTester)
+numComments=9

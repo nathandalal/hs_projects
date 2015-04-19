@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=dataValue
+comment0.target=DoubleNode(java.lang.Object)
+comment0.text=\n\ One\ parameter\ constructor\ for\ the\ DoubleNode\ class.\ \n\ Stores\ an\ object\ in\ an\ unlinked\ DoubleNode.\n\ \n\ @param\ dataValue\ is\ the\ data\ element\ for\ this\ container\n
+comment1.params=prev\ dataValue\ next
+comment1.target=DoubleNode(DoubleNode,\ java.lang.Object,\ DoubleNode)
+comment1.text=\n\ Three\ parameter\ constructor\ for\ the\ DoubleNode\ class.\n\ \n\ @param\ dataValue\ is\ the\ data\ element\ for\ this\ container\n\ @param\ prev\ is\ the\ link\ to\ the\ previous\ container\ or\ null\n\ @param\ next\ is\ the\ link\ to\ the\ next\ container\ or\ null\n\ \n\ Precondition\:\ prev\ and\ next\ should\ be\ of\ datatype\ ListNode\ or\ null\n
+comment2.params=
+comment2.target=java.lang.Object\ getValue()
+comment2.text=\n\ Gets\ the\ data\ value.\n\ \n\ @return\ value\ the\ instance\ variable\n
+comment3.params=
+comment3.target=DoubleNode\ getPrevious()
+comment3.text=\n\ Gets\ the\ link\ to\ the\ previous\ container.\n\ \n\ @return\ prev\ the\ instance\ variable\n
+comment4.params=
+comment4.target=DoubleNode\ getNext()
+comment4.text=\n\ Gets\ the\ link\ to\ the\ next\ container.\n\ \n\ @return\ next\ the\ instance\ variable\n
+comment5.params=dataValue
+comment5.target=void\ setValue(java.lang.Object)
+comment5.text=\n\ Sets\ the\ instance\ variable\ value\ to\ param\ dataValue.\n\ \n\ @param\ dataValue\ to\ go\ into\ instance\ variable\ value\n
+comment6.params=prevLink
+comment6.target=void\ setPrevious(DoubleNode)
+comment6.text=\n\ Sets\ the\ instance\ variable\ previous\ to\ param\ prevLink.\n\n\ @param\ prevLink\ the\ link\ to\ go\ into\ instance\ variable\ prev\n
+comment7.params=nextLink
+comment7.target=void\ setNext(DoubleNode)
+comment7.text=\n\ Sets\ the\ instance\ variable\ next\ to\ param\ nextLink.\n\n\ @param\ nextLink\ the\ link\ to\ go\ into\ instance\ variable\ next\n
+numComments=8

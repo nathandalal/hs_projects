@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=oldCard\ newCard\ location\ destination
+comment0.target=Move(Card,\ Card,\ java.util.Stack,\ java.util.Stack)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Move.\n\ \n\ Precondition\:\ The\ move\ in\ game\ has\ already\ been\ done\ before\ creating\ a\ Move\ object.\n\ \n\ @param\ oldCard\ the\ card\ before\ the\ move\n\ @param\ newCard\ the\ card\ after\ the\ move\n\ @param\ location\ the\ previous\ location\n\ @param\ destination\ where\ the\ card\ has\ gone\n
+comment1.params=
+comment1.target=java.lang.String\ toString()
+comment1.text=\n\ ToString\ of\ objects\ of\ class\ Move\ for\ debugging\ purposes.\n
+comment2.params=
+comment2.target=Card\ getOldCard()
+comment2.text=\n\ Returns\ the\ old\ card\n\ \n\ @return\ oldCard\n
+comment3.params=
+comment3.target=Card\ getNewCard()
+comment3.text=\n\ Returns\ new\ card\n\ \n\ @return\ newCard\n
+comment4.params=
+comment4.target=java.util.Stack\ getLocation()
+comment4.text=\n\ Returns\ the\ previous\ location\ of\ the\ card.\n\ \n\ @return\ location\n
+comment5.params=
+comment5.target=java.util.Stack\ getDestination()
+comment5.text=\n\ Returns\ the\ current\ location\ or\ destination\n\ \n\ @return\ destination\n
+numComments=6

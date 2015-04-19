@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=initValue
+comment0.target=TreeNode(java.lang.Object)
+comment0.text=\n\ A\ 1\ parameter\ constructor\ for\ TreeNode\ that\ sets\ the\ value\ to\ a\ user-given\ value.\n\ Sets\ the\ left\ and\ right\ containers\ to\ null.\n
+comment1.params=initValue\ initLeft\ initRight
+comment1.target=TreeNode(java.lang.Object,\ TreeNode,\ TreeNode)
+comment1.text=\n\ A\ 3\ parameter\ constructor\ for\ objects\ of\ class\ TreeNode\n\ Sets\ the\ left\ container,\ the\ right\ container,\ and\ the\ value.\n\ \n\ @param\ l\ to\ be\ set\ to\ the\ left\ container\n\ @param\ r\ to\ be\ set\ to\ the\ right\ container\n\ @param\ v\ to\ be\ set\ to\ the\ value\ instance\ variable\n
+comment2.params=
+comment2.target=java.lang.Object\ getValue()
+comment2.text=\n\ Gets\ value\ for\ objects\ of\ class\ TreeNode\n\ \n\ @return\ value\n
+comment3.params=
+comment3.target=TreeNode\ getLeft()
+comment3.text=\n\ Gets\ the\ left\ container\ for\ objects\ of\ class\ TreeNode\n\ \n\ @return\ left\n
+comment4.params=
+comment4.target=TreeNode\ getRight()
+comment4.text=\n\ Gets\ the\ right\ container\ for\ objects\ of\ class\ TreeNode\n\ \n\ @return\ right\n
+comment5.params=theNewValue
+comment5.target=void\ setValue(java.lang.Object)
+comment5.text=\n\ Sets\ value\ for\ objects\ of\ class\ TreeNode\n\ \n\ @param\ theNewValue\ to\ be\ set\ to\ value\n
+comment6.params=theNewLeft
+comment6.target=void\ setLeft(TreeNode)
+comment6.text=\n\ Sets\ the\ left\ container\ for\ objects\ of\ class\ TreeNode\n\ \n\ @param\ theNewLeft\ to\ be\ set\ to\ left\n
+comment7.params=theNewRight
+comment7.target=void\ setRight(TreeNode)
+comment7.text=\n\ Sets\ the\ right\ container\ for\ objects\ of\ class\ TreeNode\n\ \n\ @param\ theNewRight\ to\ be\ set\ to\ right\n
+numComments=8

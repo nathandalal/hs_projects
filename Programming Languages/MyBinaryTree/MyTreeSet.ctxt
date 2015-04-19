@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=MyTreeSet()
+comment1.params=
+comment1.target=int\ size()
+comment2.params=obj
+comment2.target=boolean\ contains(java.lang.Object)
+comment3.params=obj
+comment3.target=boolean\ add(java.lang.Object)
+comment4.params=obj
+comment4.target=boolean\ remove(java.lang.Object)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment6.params=t
+comment6.target=java.lang.String\ toString(TreeNode)
+numComments=7

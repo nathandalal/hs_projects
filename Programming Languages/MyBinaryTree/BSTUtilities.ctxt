@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=t\ x\ display
+comment0.target=boolean\ contains(TreeNode,\ java.lang.Comparable,\ TreeDisplay)
+comment0.text=\n\ precondition\:\ \ t\ is\ a\ binary\ search\ tree\ in\ ascending\ order\n\ postcondition\:\ returns\ true\ if\ t\ contains\ the\ value\ x;\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ otherwise,\ returns\ false\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \n\ @param\ t\ the\ TreeNode\ to\ check\n\ @param\ x\ the\ x\ to\ compare\ with\ the\ values\ inside\ t\n\ @param\ display\ that\ displays\ the\ tree\n\ \n\ @return\ true\ if\ value\ of\ x\ is\ in\ t,\ false\ otherwise\n
+comment1.params=t\ x\ display
+comment1.target=TreeNode\ insert(TreeNode,\ java.lang.Comparable,\ TreeDisplay)
+comment1.text=\n\ precondition\:\ \ t\ is\ a\ binary\ search\ tree\ in\ ascending\ order\n\ postcondition\:\ if\ t\ is\ empty,\ returns\ a\ new\ tree\ containing\ x;\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ otherwise,\ returns\ t,\ with\ x\ having\ been\ inserted\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ at\ the\ appropriate\ position\ to\ maintain\ the\ binary\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ search\ tree\ property;\ x\ is\ ignored\ if\ it\ is\ a\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ duplicate\ of\ an\ element\ already\ in\ t;\ only\ one\ new\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TreeNode\ is\ created\ in\ the\ course\ of\ the\ traversal\n\ \n\ @param\ t\ the\ tree\ to\ insert\ x\ into\n\ @param\ x\ the\ value\ to\ be\ inserted\ into\ t\n\ @param\ display\ that\ displays\ the\ tree\n\ \n\ @return\ TreeNode\ to\ be\ inserted\ (recursive)\n
+comment2.params=t\ display
+comment2.target=TreeNode\ deleteNode(TreeNode,\ TreeDisplay)
+comment2.text=\n\ precondition\:\ \ t\ is\ a\ binary\ search\ tree\ in\ ascending\ order\n\ postcondition\:\ returns\ a\ pointer\ to\ a\ binary\ search\ tree,\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in\ which\ the\ value\ at\ node\ t\ has\ been\ deleted\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (and\ no\ new\ TreeNodes\ have\ been\ created)\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \n\ @param\ t\ the\ TreeNode\ to\ delete\n\ @param\ display\ that\ displays\ the\ tree\n\ \n\ @param\ edited\ TreeNode\ after\ deletion\ has\ occured\n
+comment3.params=t\ x\ display
+comment3.target=TreeNode\ delete(TreeNode,\ java.lang.Comparable,\ TreeDisplay)
+comment3.text=\n\ precondition\:\ \ t\ is\ a\ binary\ search\ tree\ in\ ascending\ order\n\ postcondition\:\ returns\ a\ pointer\ to\ a\ binary\ search\ tree,\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in\ which\ the\ value\ x\ has\ been\ deleted\ (if\ present)\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (and\ no\ new\ TreeNodes\ have\ been\ created)\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \n\ @param\ t\ the\ TreeNode\ to\ search\ and\ delete\ from\n\ @param\ x\ the\ value\ to\ be\ deleted\n\ @param\ display\ that\ displays\ the\ tree\n\ \n\ @return\ new\ TreeNode\ with\ x\ deleted\n
+numComments=4

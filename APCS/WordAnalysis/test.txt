@@ -1,0 +1,5 @@
+Hello my name is Nathan.
+I enjoy sports and stuff.
+This is a computer science project.
+The blackboard is in front of me.
+I hope this works.

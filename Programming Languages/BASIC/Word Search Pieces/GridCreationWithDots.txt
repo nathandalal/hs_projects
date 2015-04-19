@@ -1,0 +1,33 @@
+rem Nathan Dalal
+rem 2/25/14
+
+rem Program Overview and Implementation:
+rem This program, given a grid size, will generate a grid of dots.
+rem The program will prompt the user for a grid size. Then it will create a 2d array with rem the grid size as the square length. It will then call the dot-filling subroutine and
+rem after that, it will call the grid printing subroutine.
+
+rem BASIC Code:
+
+401 input "grid size";m :rem user input of grid size
+402 if m<0 then goto 401 :rem check if grid size is valid
+403 dim gr$(m,m) :rem create 2d array of strings
+404 gosub 421 :rem fill array with dots subroutine
+405 gosub 451 :rem printing grid subroutine
+406 end
+
+421 rem filling 2d array with dots subroutine
+422 for i=1 to m
+423 for j=1 to m
+424 gr$(i,j) = "."
+425 next j
+426 next i
+427 return
+
+451 rem printing grid subroutine
+452 for i=1 to m :rem outer loop
+453 for j=1 to m :rem inner loop
+454 print gr$(i,j);" "; :rem print next part
+455 next j
+456 print :rem goes to next line (formatting)
+457 next i
+458 return :rem exit printing grid subroutine

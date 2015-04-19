@@ -1,0 +1,44 @@
+Class documentation
+<---- javadoc command: ---->
+/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/javadoc
+-author
+-version
+-nodeprecated
+-package
+-source
+1.6
+-noindex
+-notree
+-nohelp
+-nonavbar
+-d
+/Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/doc
+-classpath
+/Applications/BlueJ.app/Contents/Resources/Java/bluejcore.jar:/Applications/BlueJ.app/Contents/Resources/Java/junit.jar:/Users/nathandalal/Desktop/2012 - 2013 School/AP Computer Science A/GridWorldCaseStudy/GridWorldCodeBlueJ/gridworld.jar:/Users/nathandalal/Desktop/2012 - 2013 School/AP Computer Science A/KarelDistribution/KarelJRobot.jar:/Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD
+/Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/WordAnalysis.java
+<---- end of javadoc command ---->
+Loading source file /Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/WordAnalysis.java...
+Constructing Javadoc information...
+Standard Doclet version 1.6.0_37
+Building tree for all the packages and classes...
+Generating /Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/doc/WordAnalysis.html...
+/Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/WordAnalysis.java:87: warning - @Precondition: is an unknown tag.
+/Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/WordAnalysis.java:87: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+/Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/WordAnalysis.java:87: warning - @param argument "String" is not a parameter name.
+/Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/WordAnalysis.java:156: warning - @param argument "String" is not a parameter name.
+/Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/WordAnalysis.java:102: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+/Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/WordAnalysis.java:66: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+/Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/WordAnalysis.java:66: warning - @param argument "String" is not a parameter name.
+/Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/WordAnalysis.java:344: warning - @param argument "int" is not a parameter name.
+/Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/WordAnalysis.java:40: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+/Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/WordAnalysis.java:40: warning - @param argument "String" is not a parameter name.
+Generating /Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/doc/package-frame.html...
+Generating /Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/doc/package-summary.html...
+Generating /Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/doc/constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating /Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/doc/allclasses-frame.html...
+Generating /Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/doc/allclasses-noframe.html...
+Generating /Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/doc/index.html...
+Generating /Users/nathandalal/Desktop/Nathan/2012 - 2013 School/AP Computer Science A/Programming Projects/WordAnalysisNathanD/doc/stylesheet.css...
+10 warnings

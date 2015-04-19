@@ -1,0 +1,31 @@
+Nathan Dalal
+1/31/14
+
+Program Description:
+This code will add 2 byte integers stored in memory and store them in a 2 byte memory location using absolute mode addressing. The carry flag is cleared off the start. The first two bytes are added. If the value added exceeds the maximum value of 1 byte, the carry flag is set off. Then the next bytes are added with carry, so if an integer needs to be carried from the first byte, it is added in the next byte of the answer. In this way, one can add n integers by using the carry flag and moving the resulting carried bit into the next byte.
+
+Variables (Memory Locations):
+1B1 = $0410 //byte 1 of integer 1
+2B1 = $0411 //byte 2 of integer 1
+1B2 = $0412 //byte 1 of integer 2
+2B2 = $0413 //byte 2 of integer 2
+1A1 = $0414 //byte 1 of answer
+2A1 = $0415 //byte 2 of answer
+
+Enter the two byte integers you would like added in B1 and B2 and the sum will be stored in A1 after you run the program.
+
+Instructions:
+
+CLC 	  18 	   //Clear the carry flag.
+LDA 1B1   AD 10 04 //Load the accumulator with first byte of the first integer.
+ADC 1B2   6D 12 04 //Add with carry the first byte of the second integer.
+STA 1A1   8D 14 04 //Store the two added bytes in first byte of answer.
+LDA 2B1   AD 11 04 //Load the accumulator with second byte of the first integer.
+ADC 2B2   6D 13 04 //Add with carry the second byte of the second integer.
+STA 2A1   8D 15 04 //Store the two added bytes in second byte of answer.
+BRK 	  00       //Break.
+
+Paste-able Code (enter in hex 0500 to 0513):
+:  0500 18 AD 10 04 6D 12 04 8D
+:  0508 14 04 AD 11 04 6D 13 04
+:  0510 8D 15 04 00

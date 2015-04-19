@@ -1,0 +1,353 @@
+rem Nathan Dalal
+rem 3/3/14
+
+rem Program Input:
+
+rem The user gives a list of n words.
+rem The user gives a size m of an m x m size grid.
+
+rem Printing Requirements:
+
+rem 1. Print word list.
+rem 2. Print unused words.
+rem 3. Words that are horizontal.
+rem 4. Words that are vertical.
+rem 5. Game key.
+rem 6. Game.
+
+rem Word Placement:
+
+rem First word placement:
+rem      Random location and random orientation.
+rem Second word placement:
+rem      The word placement must be deterministic.
+rem      Possible spaces must be found before placement.
+rem      First get random orientation.
+rem      Check if there are opposite orientations.
+rem      If there are, force a cross.
+rem      Otherwise, place deterministically.
+
+rem Approach:
+
+rem Use 1d print array subroutine to print word lists.
+rem This will include total word, unused, horizontal,
+rem and vertical lists once they are created.
+
+rem Use a random number generator between 0-1
+rem to get a boolean value.
+rem Use the boolean value to determine orientation.
+
+rem Use the built-in mid function to check if words can fit
+rem in positions on the grid. store viable positions
+rem in a 2d array with a second dimension of 2 (2 coords).
+rem This is done in two ways, with crosses and normally.
+
+rem If a cross can happen, make it happen (force a cross).
+rem This is how a cross is done.
+rem Compare each and every character in a
+rem for loop construction to see if crossovers occur.
+rem If a character match is found, the possible location
+rem placement is determined and checked in the grid.
+rem If the location is valid, the word is placed in a
+rem valid locations array.
+rem Locations in valid crosses location array are selected
+rem between deterministically.
+
+rem If cross cannot happen, place normally.
+
+rem If placement cannot occur, put in unused word array.
+
+rem In this way, the key will be finished.
+
+
+rem Code:
+
+
+1    rem variable initialization
+2    input "grid size";m : rem user input of grid size
+3    if m<=0 then goto 2 : rem check if grid size is valid
+4    dim gr$(m,m) : rem create 2d array of strings
+5    gosub 3101 : rem fill array subroutine (with dots this time)
+6    af = 0 : rem initialize array flag : sd = ti : rem initializes seed
+7    read n : dim wd$(n) :rem creates array of length in data line 4003
+8    rem n will be length of all word arrays
+9    rem the wd array will be general array filled for printing
+10   dim aw$(n) : rem list of all words initialized
+11   al = n : rem initialization of amount of total words
+12   dim hw$(n) : rem list of all horizontal used words
+13   hl = 0 : rem initialization of amount of horizontal words
+14   dim vw$(n) : rem list of all vertical used words
+15   vl = 0 : rem initialization of amount of vertical words
+16   dim uw$(n) : rem list of all unused words
+17   ul = 0 : rem initialization of amount of unused words
+18   for i = 1 to n
+19   read aw$(i) : rem reading in words from data statement 4004
+20   next i
+21   gosub 3161 : rem sorts the words high to low in subroutine
+22   dim pp(m * m,2) : dim pc(m * m,2) : dim pl(1,2)
+23   rem line 22 is initializing possible placements arrays
+24   rem line 22 pp for normal, pc for crosses, pl for placeholder
+25   dim hp(n,2) : dim vp(n,2)
+26   rem line 25 stores all horiz and vert placement locations
+
+41   rem looping the placement of words
+42   for a = 1 to n
+43   wl = len(aw$(a)) : rem store word length
+44   gosub 3081 : o = bo : rem generate random orientation
+45   gosub 3361 : rem fills up crossover locations
+46   if mc = 0 then goto 48 : rem crossover doesn't work
+47   cf = 1 : goto 52 : places cross over words in lists
+48   cf = 0 : gosub 3201 : rem fills pp with locations up to ma
+49   if ma = 0 then ul = ul + 1 : uw$(ul) = aw$(a) : goto 56
+50   mn = 1 : mx = ma : gosub 3021 : rem gets random normal index
+51   goto 53 : rem skip over crossover placement logic
+52   mn = 1 : mx = mc : gosub 3021 : rem gets random cross index
+53   gosub 3281 : rem puts word into grid
+54   if o = 0 then hl = hl + 1 : hw$(hl) = aw$(a)
+55   if o = 1 then vl = vl + 1 : vw$(vl) = aw$(a)
+56   next a
+
+61   gosub 3261 : rem print all word lists
+62   print : print "game key:"
+63   gosub 3041 : rem prints grid with just words (key)
+64   gosub 3101 : rem fills grid with words
+
+71   if hl = 0 then goto 75
+72   for f4 = 1 to hl
+73   print hw$(f4);" -> ";hp(f4,1);",";hp(f4,2)
+74   next f4
+75   if vl = 0 then goto 79
+76   for f4 = 1 to vl
+77   print vw$(f4);" -> ";vp(f4,1);",";vp(f4,2)
+78   next f4
+79   rem end of print debug
+
+81   print : gosub 3301 : rem delay for asking to print full grid
+82   print chr$(147) : rem clrscr
+83   gosub 3441 : rem prints finished game and word bank
+
+91   end
+
+rem subroutines:
+
+3021 rem entry point for random number subroutine
+3022 rem returns random integers between mx and mn inclusive
+3023 rem initialize mn, mx, random value stored in r
+3024 r = mn + int(rnd(sd)*(mx-mn+1)) : rem random number algorithm
+3025 return : rem exit random number subroutine
+
+3041 rem printing grid subroutine
+3042 rem grid must be 2d arr called gr, grid size called m
+3042 rem gr$ must be dim'd for subroutine to work
+3043 for i=1 to m :rem outer loop
+3044 for j=1 to m :rem inner loop
+3046 print gr$(j,i);" "; :rem print next part
+3047 next j
+3048 print :rem goes to next line (formatting)
+3049 next i
+3050 return :rem exit printing grid subroutine
+
+3061 rem print 1d array subroutine
+3062 rem length must be called l, set af as array flag
+3063 rem wd will be initialized in array flag subroutine
+3064 rem in this way, any array can be printed
+3065 k = 1 : gosub 3141 : if wd$(1) = "" then goto 3073
+3066 rem above line skips loop if array is empty
+3067 for i = 1 to l
+3068 k = i : gosub 3141 : rem go to array flag subroutine
+3069 print wd$(i);" "; :rem print word
+3070 next i
+3071 print
+3072 goto 3074
+3073 print "empty list"
+3074 return
+
+3081 rem random boolean generating subroutine
+3082 rem boolean will be stored in bo as real num, 0 or 1
+3083 rem by convention, 0 is false and 1 is true
+3084 mn = 0 : mx = 1 : gosub 3021
+3085 bo = r
+3086 return
+
+3101 rem entry point for grid filler subroutine
+3102 rem gr must be dim'd before use, grid size must be m
+3103 rem if gr$(i,j) is empty, places a dot there
+3014 rem if gr$(i,j) has a dot, places a random letter there 
+3105 rem in this way, we can fill grid with stuff not part of key
+3106 for i=1 to m
+3107 for j=1 to m
+3108 if gr$(i,j) = "" then goto 3113
+3109 rem above line will go to dot filling
+3110 if gr$(i,j) = "." then goto 3116
+3111 rem above line will go to letter filling 
+3112 goto 3121 : rem skips all filling and does nothing
+3113 rem puts dots into gr$(i,j)
+3114 gr$(i,j) = "." : goto 3121
+3115 rem end of placing dots
+3116 rem puts random letters into gr$(i,j)
+3117 mn = asc("A") : mx=asc("Z") : gosub 3021
+3118 rem line 2115 gets random letter A-Z in r
+3119 gr$(i,j) = chr$(r) : goto 3121
+3120 end of placing random letters
+3121 next j
+3122 next i
+3123 return
+
+3141 rem array flag subroutine
+3142 rem creates a numbering system for each array
+3143 rem this allows for easy printing
+3144 rem k must be initialized as index of array
+3145 rem 1 for all words, 2 for horizontal words, 
+3146 rem 3 for vertical words, 4 for unused words
+3147 if af = 1 then wd$(k) = aw$(k)
+3148 if af = 2 then wd$(k) = hw$(k)
+3149 if af = 3 then wd$(k) = vw$(k)
+3150 if af = 4 then wd$(k) = uw$(k)
+3151 return
+
+3161 rem bubble sort subroutine for all words
+3162 rem only called by the all words array
+3162 sf=0 : rem entry point for while loop : rem creates sort flag
+3163 for i=1 to n-1 :rem begin for loop
+3164 if len(aw$(i+1))<=len(aw$(i)) then goto 3168
+3165 tp$=aw$(i+1):aw$(i+1)=aw$(i):aw$(i)=tp$:sf=1
+3166 rem line 3165 above moves lower value further up in the array
+3167 rem line 3165 2 lines above also increments sf if swap occurs
+3168 next i :rem ends for loop
+3169 if sf=1 goto 3162 :rem restarts while loop if sort flag is set
+3170 return
+
+3181 rem grid strip dot check subroutine
+3182 rem stores whether section is available in boolean im
+3183 rem strip available if strip has dots or letters same as word
+3184 rem im = 0 if not match, 1 if is match
+3185 rem word length (wl), orientation (o), i and j needed
+3186 im = 1 : rem initialization of match boolean
+3187 if o = 0 then k = i
+3188 if o = 1 then k = j
+3189 if i = 0 and j = 0 then im = 0 : goto 3198
+3190 if wl + k - 1 > m then im = 0 : goto 3198 : rem out of bounds
+3191 for p = k to k + wl - 1
+3192 if o = 0 then if gr$(p,j) = mid$(aw$(a),p-k+1,1) then goto 3197
+3193 if o = 1 then if gr$(i,p) = mid$(aw$(a),p-k+1,1) then goto 3197
+3194 if o = 0 then if gr$(p,j) = "." then goto 3197
+3195 if o = 1 then if gr$(i,p) = "." then goto 3197
+3196 im = 0 : rem not a match if not same letter or not a dot
+3197 next p
+3198 return
+
+3201 rem general word fit check subroutine
+3202 rem deterministic placement for non cross overs
+3203 rem word length must be stored in wl, orientation in o
+3204 rem word must be in aw$(a)
+3205 ma = 0 : rem initializing amount of matches
+3206 for i = 1 to m
+3207 for j = 1 to m
+3208 gosub 3181 : rem check if location is valid
+3209 if im = 0 goto 3212
+3210 ma = ma + 1
+3211 pp(ma,1) = i : pp(ma,2) = j
+3212 next j
+3213 next i
+3214 return
+
+3261 rem printing all word lists subroutine
+3262 print : print "list of all words:"
+3263 af = 1 : l = al : gosub 3061 : rem prints all words
+3264 print : print "list of horizontal words:"
+3265 af = 2 : l = hl : gosub 3061 : rem prints horizontal words 
+3266 print : print "list of vertical words:"
+3267 af = 3 : l = vl : gosub 3061 : rem prints vertical words
+3268 print : print "list of unused words:"
+3269 af = 4 : l = ul : gosub 3061 : rem prints unused words
+3270 return
+
+3281 rem putting word into grid subroutine
+3282 rem requires word at aw$(a) and random index r
+3283 rem also requires orientation, stores placed loc in hp or vp
+3284 gosub 3321 : rem crossover flag subroutine
+3285 if o = 0 then k = pl(1,1) : goto 3287
+3286 if o = 1 then k = pl(1,2) : goto 3288
+3287 hp(hl+1,1) = pl(1,1) : hp(hl+1,2) = pl(1,2) : goto 3289
+3288 vp(vl+1,1) = pl(1,1) : vp(vl+1,2) = pl(1,2) : goto 3289
+3289 for p = k to k + wl - 1
+3290 if o = 0 then gr$(p,pl(1,2))=mid$(aw$(a),p-k+1,1)
+3291 if o = 1 then gr$(pl(1,1),p)=mid$(aw$(a),p-k+1,1)
+3292 next p 
+3293 return
+
+3301 rem print key delay subroutine
+3302 print "press any key ... ";
+3303 get a$ : if a$ = "" then goto 3303
+3304 print a$
+3305 return
+
+3321 rem crossover flag subroutine
+3322 rem used in putting word into grid subroutine
+3323 if cf = 0 then goto 3325
+3324 if cf = 1 then goto 3326
+3325 pl(1,1) = pp(r,1) : pl(1,2) = pp(r,2) : goto 3327
+3326 pl(1,1) = pc(r,1) : pl(1,2) = pc(r,2) : goto 3327
+3327 return
+
+3361 rem cross over word fit subroutine
+3362 rem finds possible cross over locations
+3363 rem word length must be stored in wl, orientation in o
+3364 mc = 0 : rem initializing amount of crossover matches
+3365 if o = 0 then if vl = 0 then goto 3375
+3366 if o = 1 then if hl = 0 then goto 3375
+3367 if o = 1 then goto 3372
+3368 for y = 1 to vl : rem horizontal crossover locations
+3369 gosub 3401 : rem finds possible crosses in vw$(y)
+3370 next y
+3371 goto 3375
+3372 for x = 1 to hl : rem vertical crossover locations
+3373 gosub 3401 : rem finds possible crosses for hw$(x)
+3374 next x
+3375 return
+
+3401 rem crosses words to find matches
+3402 if o = 1 then goto 3416 : rem if word is vertical
+3403 for ab = 1 to len(vw$(y)) : rem looping over words on grid
+3404 for ac = 1 to wl : rem looping over word to be placed
+3405 if mid$(aw$(a),ac,1) <> mid$(vw$(y),ab,1) then goto 3413
+3406 rem if the words have a similar letter
+3407 i = vp(y,1)-ac+1 : j = vp(y,2)+ab-1
+3408 rem finds where the word to be placed should go
+3409 if i<=0 or j<=0 then goto 3413
+3410 gosub 3181 : rem checks whether strip is valid
+3411 if im = 0 then goto 3413
+3412 mc = mc + 1 : pc(mc,1) = i : pc(mc,2) = j
+3413 next ac
+3414 next ab
+3415 goto 3428 : rem end of o = 0 check
+3416 for ab = 1 to len(hw$(x))
+3417 for ac = 1 to wl
+3418 if mid$(aw$(a),ac,1) <> mid$(hw$(x),ab,1) then goto 3426
+3419 rem if the words have a similar letter
+3420 i = hp(x,1)+ab-1 : j = hp(x,2)-ac+1
+3421 rem finds where the word to be placed should go
+3422 if i<=0 or j<=0 then goto 3426 
+3423 gosub 3181 : rem checks whether strip is valid
+3424 if im = 0 then goto 3426
+3425 mc = mc + 1 : pc(mc,1) = i : pc(mc,2) = j
+3426 next ac
+3427 next ab : rem end of o = 1 check
+3428 return
+
+3441 rem prints the game and word bank
+3442 gosub 3041
+3443 print : print "WORD BANK:"
+3444 for i = 1 to hl
+3445 print hw$(i);" "; :rem print word
+3446 next i : print
+3447 for i = 1 to vl
+3448 print vw$(i);" "; :rem print word
+3449 next i
+3450 return
+
+4001 rem data statements for word search game:
+4002 rem first statement is amount of words, others are words
+4003 data 4
+4004 data "BITE","BYTE","SITE","RIGHT"
+ 

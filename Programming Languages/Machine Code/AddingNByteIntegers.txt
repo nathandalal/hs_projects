@@ -1,0 +1,34 @@
+Nathan Dalal
+2/4/14
+
+Program Description:
+This program adds two n-byte integers using absolute indexed addressing. The addends start at memory locations N1, N2. The answer is at location A. The byte length of the integers is at L; a byte length of 0 will be treated as a byte length of 256 bytes. The code should begin at C. This program extends the logic of adding two bytes with the carry flag using n bytes and a branch instruction.
+
+Variables (Begin Memory Locations):
+N1     (1st Addend):                       $0500
+N2     (2nd Addend):                       $0600
+A      (Answer):                           $0700
+L      (Byte Length):                      $0830
+C      (Code):                             $0800
+OFFSET (Twos Complement Offset in Branch): F3 (-13)
+
+Instructions:
+
+OUT OF LOOP
+	CLC 	   18 	    //Clear the carry flag.
+	LDX #0     A2 00    //Load the X register with the value 0. X Keeps track of which bytes are being added.
+	LDY A      AC 30 08 //Load the Y register with the byte length.
+LOOP
+	LDA N1,X   BD 00 05 //Load the accumulator with second byte of the first integer.
+	ADC N2,X   7D 00 06 //Add with carry the second byte of the second integer.
+	STA A,X    9D 00 07 //Store the two added bytes in second byte of answer.
+	INX	   E8       //Increment X register to increase the index of bytes added.
+	DEY	   88       //Decrement Y register to decrease byte length counter.
+	BNE LOOP   D0 F3    //Loop to LDA instruction if zero flag not set (Y /= 0).
+	BRK 	   00       //Break.
+
+Paste-able Code (start at hex C in variables):
+:  0800 18 A2 00 AC 30 08 BD 00
+:  0808 05 7D 00 06 9D 00 07 E8
+:  0810 88 D0 F3 00 aa aa aa aa
+

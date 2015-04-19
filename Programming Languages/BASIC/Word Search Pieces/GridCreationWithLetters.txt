@@ -1,0 +1,42 @@
+rem Nathan Dalal
+rem 2/25/14
+
+rem Program Overview and Implementation:
+rem This program, given a grid size, will generate a grid of random letters.
+rem The program will prompt the user for a grid size. Then it will create a 2d array with
+rem the grid size as the square length. It will then call the random letters subroutine,
+rem which will use the random number subroutine and ascii conversion functions. It will
+rem then call the grid printing subroutine.
+
+rem BASIC Code:
+
+501 input "grid size";m :rem user input of grid size
+502 if m<0 then goto 501 :rem check if grid size is valid
+503 dim gr$(m,m) :rem create 2d array of strings
+504 gosub 521 :rem fill array with random letters subroutine
+505 gosub 551 :rem printing grid subroutine
+506 end
+
+521 rem filling 2d array with random letters subroutine
+522 sd=0 : rem the seed of random number generation
+523 mn=asc("A"): mx=asc("Z") : rem min and max of petscii A-Z
+524 for i=1 to m
+525 for j=1 to m
+526 gosub 541 : rem jumps to random number subroutine
+527 gr$(i,j) = chr$(r)
+528 next j
+529 next i
+530 return
+
+541 rem entry point for random number subroutine
+542 r = mn + int(rnd(sd)*(mx-mn+1)) : rem random number algorithm
+543 return : rem exit random number subroutine
+
+551 rem printing grid subroutine
+552 for i=1 to m :rem outer loop
+553 for j=1 to m :rem inner loop
+554 print gr$(i,j);" "; :rem print next part
+555 next j
+556 print :rem goes to next line (formatting)
+557 next i
+558 return :rem exit printing grid subroutine

@@ -1,0 +1,52 @@
+rem Nathan Dalal
+rem 2/27/14
+
+rem Program Overview and Implementation:
+rem Bubble sort swaps values in an array by 2's if they are out of 
+rem order. If a swap occurs, the sort happens again.
+rem It keeps happening until the swap flag is not set and 
+rem the array is actually sorted.
+rem Two data lines are used to construct the array and fill in 
+rem its contents. Then the array is sorted using a while
+rem construct. This can be done by going back to a previous line 
+rem if a flag is set (the swap flag). The for loop
+rem inside continues sorting by 2 elements until the swap flag 
+rem is never set, finishing the bubble sort. A 1d array
+rem print subroutine is used to show the code works.
+
+rem BASIC Code:
+
+201 data 6 :rem amount of words to put in array
+202 data "if","while","then","for","peach","summation"
+203 read n : dim wd$(n) :rem creates array of length in data line 201
+204 gosub 221 :rem add data values in line 202 into array
+205 print "init arr: ";
+206 gosub 261 :rem print array subroutine
+207 gosub 241 :rem string sorting by length subroutine
+208 print "sort arr: ";
+209 gosub 261 :rem print array subroutine
+210 end
+
+221 rem put data in array of words subroutine
+222 for i=1 to n
+223 read wd$(i)
+224 next i
+225 return
+
+241 rem bubble sort subroutine
+242 wh=0 :rem entry point for while loop :rem creates while flag
+243 for i=1 to n-1 :rem begin for loop
+244 if len(wd$(i+1))>=len(wd$(i)) then goto 248
+245 tp$=wd$(i+1):wd$(i+1)=wd$(i):wd$(i)=tp$:wh=1
+246 rem line 245 above moves lower value further up in the array
+247 rem line 245 2 lines above also increments wh if swap occurs
+248 next i :rem ends for loop
+249 if wh=1 goto 242 :rem restarts while loop if flag is set
+250 return
+
+261 rem print 1d array subroutine
+262 for i=1 to n
+263 print wd$(i);" "; :rem print word
+264 next i
+265 print
+266 return

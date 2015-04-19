@@ -1,0 +1,40 @@
+Nathan Dalal
+2/7/14
+
+Program Description:
+This program uses indirect indexed addressing to carry out a buffered print of a string. The buffered string will be stored starting at location $033A. The buffer will contain a string length as well as a string with a maximum length of 197 bytes, so as to not override hex 400, the entry break point. A string length of 0 will be defined as a null string. The string will be printed somewhere on the screen, and this location will be defined as a 2 byte value in the zero page address $01 as the low byte and $02 as the high byte. The Y register will be used as a counter to determine where the characters of the string will go on screen, starting at 0. The value in the X register is used to keep track of the length of the string and control the loop.
+
+String Definition:
+Length byte - stored at $033A
+Character bytes - stored after $033b until $03ff
+
+High-Level Instructions:
+		S1 = S0 + 1
+		S0 = $033A
+		LDY #0
+		LDX S0
+		BEQ NULL STRING
+LOOP    	LDA S1, Y
+		STA ($01), Y //indirect indexed addressing with zero page
+		INY
+		DEX
+		BNE LOOP
+NULL STRING	BRK
+
+Assembly Code (Read-Only):
+.C:0800  A0 00       LDY #$00
+.C:0802  AE 3A 03    LDX $033A
+.C:0805  F0 09       BEQ $0810
+.C:0807  B9 3B 03    LDA $033B,Y
+.C:080a  91 01       STA ($01),Y
+.C:080c  C8          INY
+.C:080d  CA          DEX
+.C:080e  D0 F7       BNE $0807
+.C:0810  00          BRK
+
+Machine Code (Hello World!    Nathan Dalal) (28 in length - 1c in hex length):
+
+:  033a 1c 48 05 0c 0c 0f 20 57 
+:  0342 0f 12 0c 04 20 20 20 20
+:  034a 4e 01 14 08 01 0e 20 44
+:  0352 01 0c 01 0c 20 20 20 20

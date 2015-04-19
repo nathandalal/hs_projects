@@ -1,0 +1,43 @@
+rem Nathan Dalal
+rem 2/24/14
+
+rem Program Overwiew:
+rem This program does a frequency analysis on a range of random numbers. BASIC cannot
+rem create true random numbers, but rather it uses a concept called a seed. The seed 
+rem corresponds to an array of values that are read off in succession each time the random
+rem function is called with that seed. The purpose of this program is to analyze the
+rem variation on random numbers depending on the seed given by the user.
+
+rem Implementation:
+rem The program will prompt the user for a seed, followed by the two max and min numbers,
+rem followed by the nf number. It will then create an array of length max - min; this
+rem array will carry out frequency analysis. Using a seed, the random number algorithm
+rem will generate nf random values, and the amount of these values will be stored in the
+rem frequency analysis array. Then, the numbers and the frequencies in the array will be
+rem printed for display.
+
+rem BASIC Code:
+
+121 input "seed"; sd : rem the seed of random number generation
+122 input "min"; mn : input "max"; mx : rem min and max of nums
+123 input "amount of freq"; nf : rem amount of frequency analysis done
+124 dim fr(mx - mn) : rem creation of frequency analysis array
+
+141 for i=1 to nf :rem begin array filling loop
+142 gosub 181 : rem jumps to random number subroutine
+143 fr(r - mn) = fr(r - mn) + 1 : rem increments array value at index
+144 next : rem end of array filling loop
+
+161 for n = mn to mx : rem begin printing for loop
+162 print "number -->" ; n ; "  frequency -->" ; fr(n - mn)
+163 next : rem end of printing loop
+164 end : rem where program will end
+
+181 rem entry point for random number subroutine
+182 r = mn + int(rnd(sd)*(mx-mn+1)) : rem random number algorithm
+183 return : rem exit random number subroutine
+
+rem Results:
+rem After Excel Spreadsheet analysis, I discovered that the 0 seed has a consistent peak
+rem in the middle, while the 1 seed has a wavy inconsistent form. Both are not very
+rem reliable number generators to bet on.

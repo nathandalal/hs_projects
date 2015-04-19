@@ -1,0 +1,144 @@
+rem Nathan Dalal
+rem 2/27/14
+
+rem Program Overview and Implementation:
+rem This program will combine all pieces of 
+rem word search code in a menu system.
+
+rem BASIC Code:
+
+51  print
+52  print "WARNING: you cannot call both grid subroutines in same instance."
+53  print "         please exit out to do this."
+54  print
+
+101 input "1 sort, 2 dot grid, 3 letter grid, 4 quit";mu
+102 if mu=1 then gosub 201
+103 if mu=2 then gosub 401
+104 if mu=3 then gosub 501
+105 if mu <> 4 goto 101 :rem back to menu
+106 end
+107 rem 5 lines above will enter a loop menu system
+
+rem Codes below will be commonly used subroutines. 
+
+121 rem entry point for random number subroutine
+122 rem returns random numbers between mx and mn inclusive
+123 rem initialize sd, mn, mx,     random value stored in r
+124 r = mn + int(rnd(sd)*(mx-mn+1)) : rem random number algorithm
+125 return : rem exit random number subroutine
+
+141 rem printing grid subroutine
+142 rem gr$ must be dim'd for subroutine to work
+143 for i=1 to m :rem outer loop
+144 for j=1 to m :rem inner loop
+145 print gr$(i,j);" "; :rem print next part
+146 next j
+147 print :rem goes to next line (formatting)
+148 next i
+149 return :rem exit printing grid subroutine
+
+rem Bubble Sort Program Overview and Implementation:
+rem Bubble sort swaps values in an array by 2's if they are out of 
+rem order. If a swap occurs, the sort happens again.
+rem It keeps happening until the swap flag is not set and 
+rem the array is actually sorted.
+rem Two data lines are used to construct the array and fill in 
+rem its contents. Then the array is sorted using a while
+rem construct. This can be done by going back to a previous line 
+rem if a flag is set (the swap flag). The for loop
+rem inside continues sorting by 2 elements until the swap flag 
+rem is never set, finishing the bubble sort. A 1d array
+rem print subroutine is used to show the code works.
+
+rem BASIC Code:
+
+201 read n : dim wd$(n) :rem creates array of length in data line 601
+202 gosub 221 :rem add data values in line 602 into array
+203 print "init arr: ";
+204 gosub 261 :rem print array subroutine
+205 gosub 241 :rem string sorting by length subroutine
+206 print "sort arr: ";
+207 gosub 261 :rem print array subroutine
+208 return
+
+221 rem put data in array of words subroutine
+222 for i=1 to n
+223 read wd$(i)
+224 next i
+225 return
+
+241 rem bubble sort subroutine
+242 wh=0 :rem entry point for while loop :rem creates while flag
+243 for i=1 to n-1 :rem begin for loop
+244 if len(wd$(i+1))<=len(wd$(i)) then goto 248
+245 tp$=wd$(i+1):wd$(i+1)=wd$(i):wd$(i)=tp$:wh=1
+246 rem line 245 above moves lower value further up in the array
+247 rem line 245 2 lines above also increments wh if swap occurs
+248 next i :rem ends for loop
+249 if wh=1 goto 242 :rem restarts while loop if flag is set
+250 return
+
+261 rem print 1d array subroutine
+262 for i=1 to n
+263 print wd$(i);" "; :rem print word
+264 next i
+265 print
+266 return
+
+rem Grid Creation With Dots Program Overview and Implementation:
+rem This program, given a grid size, will generate a grid of dots.
+rem The program will prompt the user for a grid size. Then it will 
+rem create a 2d array with rem the grid size as the square length.
+rem It will then call the dot-filling subroutine and
+rem after that, it will call the grid printing subroutine.
+
+rem BASIC Code:
+
+401 input "grid size";m :rem user input of grid size
+402 if m<=0 then goto 401 :rem check if grid size is valid
+403 dim gr$(m,m) :rem create 2d array of strings
+404 gosub 421 :rem fill array with dots subroutine
+405 gosub 141 :rem printing grid subroutine
+406 return
+
+421 rem filling 2d array with dots subroutine
+422 for i=1 to m
+423 for j=1 to m
+424 gr$(i,j) = "."
+425 next j
+426 next i
+427 return
+
+rem Program Overview and Implementation:
+rem This program, given a grid size, will generate a grid of random letters.
+rem The program will prompt the user for a grid size. Then it will
+rem create a 2d array with the grid size as the square length. 
+rem It will then call the random letters subroutine, which will 
+rem use the random number subroutine and ascii conversion functions. It will
+rem then call the grid printing subroutine.
+
+rem BASIC Code:
+
+501 input "grid size";m :rem user input of grid size
+502 if m<=0 then goto 501 :rem check if grid size is valid
+503 dim gr$(m,m) :rem create 2d array of strings
+504 gosub 521 :rem fill array with random letters subroutine
+505 gosub 141 :rem printing grid subroutine
+506 return
+
+521 rem filling 2d array with random letters subroutine
+522 sd=0 : rem the seed of random number generation
+523 mn=asc("A"): mx=asc("Z") : rem min and max of petscii A-Z
+524 for i=1 to m
+525 for j=1 to m
+526 gosub 121 : rem jumps to random number subroutine
+527 gr$(i,j) = chr$(r)
+528 next j
+529 next i
+530 return
+
+rem Data Statements:
+
+601 data 8 :rem amount of words to put in array
+602 data "sorting","words","is","fun","it","gives","me","pleasure"

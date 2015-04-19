@@ -1,0 +1,23 @@
+Program Description:
+This code will add 1 byte integers stored in memory and store them in a 1 byte memory location.
+
+Variables:
+B1 = $0410 //byte 1 to be added
+B2 = $0411 //byte 2 to be added
+A1 = $0412 //byte where answer will be stored
+
+Because of the chip’s Little Indian method of understanding the bytes, translation of locations in memory will be written in low-byte to high-byte order. This is why B1 is translated as 10 04 instead of 04 10.
+
+Instructions:
+
+CLC      18       //Clear the carry flag.
+LDA B1   AD 10 04 //Load the accumulator with the value in location hex B1.
+ADC B2   6D 11 04 //Add with carry the value in location hex B2 in accumulator.
+STA A1   8D 12 04 //Store the value in the accumulator in location hex A1. 
+BRK      00	  //Break.
+
+Paste-able Code (enter in hex 0500 to 050a):
+18 AD 10 04 6D 11 04 8D
+12 04 00
+
+Enter bytes you would like added in B1 and B2 and the sum will be stored in A1 after you run the program.
